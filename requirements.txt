@@ -1,0 +1,5 @@
+stim>=1.15
+pymatching>=2.0
+numpy
+matplotlib
+tqdm
