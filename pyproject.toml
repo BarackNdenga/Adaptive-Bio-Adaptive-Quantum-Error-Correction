@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bio-adaptive-qec-simulation"
+version = "0.1.0"
+description = "Simulation and analysis of a Bio-Adaptive Quantum Error Correction (BA-QEC) decoding strategy"
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [
+    {name = "ChuckGPTX", email = ""}
+]
+license = {text = "MIT"}
+keywords = ["quantum", "error-correction", "biology", "bio-inspired"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+dependencies = [
+    "numpy",
+    "matplotlib",
+    "stim",
+    "pymatching",
+    "tqdm",
+]
+
+[project.optional-dependencies]
+ibm = ["qiskit", "qiskit-ibm-runtime"]
+dev = ["pytest", "pytest-cov", "black", "flake8", "mypy"]
+
+[tool.setuptools]
+packages = ["src"]
+
+[tool.black]
+line-length = 100
+target-version = ["py38", "py39", "py310"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--cov=src --cov-report=html"
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
