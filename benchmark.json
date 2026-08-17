@@ -1,0 +1,16 @@
+{
+  "seed": 20260817,
+  "shots": 400,
+  "n_qubits": 16,
+  "scenarios": [
+    "depolarizing",
+    "asymmetric",
+    "temporal_correlation",
+    "burst_errors",
+    "progressive_drift",
+    "abrupt_regime_change",
+    "hardware_inspired"
+  ],
+  "methods": ["MWPM", "BA-QEC", "A-BA-QEC"],
+  "notes": "Controlled local benchmark. The hardware-inspired scenario uses the repository's local hardware data conceptually; no live IBM job is submitted. Results are measurements of this implementation, not claims about physical hardware performance."
+}
